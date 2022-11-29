@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+body {
+  font-family: Roboto, serif;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar_container {
+  width: 95%;
+  border: 2px solid rgb(232, 238, 238);
+  margin: 10px 0px;
+}
+.calendar_header {
+  border-bottom: 1px solid rgb(232, 238, 238);
+}
+.calendar_header h2 {
+  display: flex;
+  align-items: center;
+}
+.calendar_input {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-top: 10px;
+}
+.calendar_input select {
+  height: 30px;
+  border-radius: 5px;
+  margin: 0 10px;
+  margin-left: 50px;
+  border: 2px solid #bababa;
+}
+#date_calendar {
+  border: 2px solid #bababa;
+}
+.c_date {
+  width: 130px;
+  height: 25px;
+  border-radius: 5px;
+}

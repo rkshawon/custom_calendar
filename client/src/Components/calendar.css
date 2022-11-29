@@ -1,0 +1,39 @@
+.calender {
+  margin: 30px 50px;
+  margin-top: 30px;
+}
+.week_header {
+  display: flex;
+  border-bottom: 3px solid rgb(0, 137, 201);
+}
+.week_header h3 {
+  width: 14%;
+  margin-right: 1%;
+  text-align: center;
+  color: rgb(0, 51, 117);
+}
+
+.calendar_date {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* grid-gap: 1%; */
+}
+.single_date {
+  border-bottom: 2px solid rgb(232, 238, 238);
+  height: 120px;
+}
+
+.single_date .date {
+  height: 20px;
+  width: 30px;
+  padding: 2px 0;
+  text-align: center;
+  color: gray;
+  /* background-color: rgb(81, 0, 173); */
+}
+.single_date .total_amount {
+  height: 50px;
+  color: rgb(53, 0, 114);
+  font-size: 11px;
+  text-align: center;
+}
