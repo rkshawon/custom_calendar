@@ -1,29 +1,30 @@
 import { useState } from "react";
 import "./App.css";
 import Calendar from "./Components/Calendar";
-import dummyDate from "./dummyDate";
 import { FaCalendarAlt } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [sdate, setSdate] = useState();
-  const [edate, setEdate] = useState();
-  const [monthe, setMonth] = useState();
+  const [sdate, setSdate] = useState("");
+  const [edate, setEdate] = useState("");
+  const [month, setMonth] = useState("");
   const [category, setCategory] = useState("all");
   const [data, setData] = useState();
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/v1/transaction/63835fafcd9fc0a68764835e")
+      .get(
+        `http://localhost:8000/api/v1/transaction/63835fafcd9fc0a68764835e?month=${month}&sdate=${sdate}&edate=${edate}`
+      )
       .then((info) => {
         setData(info.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [sdate, edate, month]);
 
   return (
     <div className="app">
@@ -106,14 +107,7 @@ function App() {
             />
           </div>
         </div>
-        <Calendar
-          dummyDate={dummyDate}
-          sdate={sdate}
-          edate={edate}
-          category={category}
-          monthe={monthe}
-          data={data}
-        />
+        <Calendar category={category} data={data} />
       </div>
     </div>
   );
